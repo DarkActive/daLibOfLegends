@@ -19,8 +19,6 @@ namespace com.riotgames.platform.statistics
 		public string gameType;
         /** \brief XP earned */               
 		public int experienceEarned;
-        /** \brief JSON Raw Stats */           
-		public string rawStatsJson;
         /** \brief Is First win of day? */           
 		public bool eligibleFirstWinOfDay;
         /** \brief Difficulty? */     

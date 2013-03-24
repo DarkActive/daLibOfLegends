@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
+using System.Reflection;
 
 using FluorineFx;
 using FluorineFx.Messaging.Messages;
@@ -77,6 +78,13 @@ namespace LibOfLegends
 		AuthResponse AuthResponse;
 
 		#endregion
+
+        static RPCService()
+        {
+            // This is necessary to make FluorineFxMods only scan the current assembly to resolve types for deserialisation
+            // In the past this used to be REALLY slow
+            TypeHelper.AddTargetAssembly(Assembly.GetExecutingAssembly());
+        }
 
 		public RPCService(ConnectionProfile connectionData, ConnectCallbackType connectCallback, DisconnectCallbackType disconnectCallback = null, NetStatusCallbackType netStatusCallback = null)
 		{
@@ -333,7 +341,7 @@ namespace LibOfLegends
 			Call(SummonerService, "getAllPublicSummonerDataByAccount", responder, arguments);
 		}
 
-		void GetAllSummonerDataByAccountInternal(Responder<AllSummonerData> responder, object[] arguments)
+		void GetAllSummonerDataByAccountInternal(Responder<AllPublicSummonerData> responder, object[] arguments)
 		{
 			Call(SummonerService, "getAllSummonerDataByAccount", responder, arguments);
 		}
@@ -389,7 +397,7 @@ namespace LibOfLegends
 			GetAllPublicSummonerDataByAccountInternal(responder, new object[] { accountID });
 		}
 
-		public void GetAllSummonerDataByAccountAsync(long accountID, Responder<AllSummonerData> responder)
+		public void GetAllSummonerDataByAccountAsync(long accountID, Responder<AllPublicSummonerData> responder)
 		{
 			GetAllSummonerDataByAccountInternal(responder, new object[] { accountID });
 		}
@@ -440,9 +448,9 @@ namespace LibOfLegends
 
         // z
 		//I don't understand how this one works anymore, always returns null for me
-		public AllSummonerData GetAllSummonerDataByAccount(long accountID)
+		public AllPublicSummonerData GetAllSummonerDataByAccount(long accountID)
 		{
-			return (new InternalCallContext<AllSummonerData>(GetAllSummonerDataByAccountInternal, new object[] { accountID })).Execute();
+			return (new InternalCallContext<AllPublicSummonerData>(GetAllSummonerDataByAccountInternal, new object[] { accountID })).Execute();
 		}
 
 		public List<string> GetSummonerNames(List<long> summonerIDs)

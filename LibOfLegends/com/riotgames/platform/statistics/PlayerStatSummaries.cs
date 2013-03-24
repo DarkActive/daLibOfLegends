@@ -4,14 +4,19 @@ using com.riotgames.platform.gameclient.domain;
 
 namespace com.riotgames.platform.statistics
 {
+    /// <summary>
+    /// The class including a list of queue type stats and user id.
+    /// </summary>
 	public class PlayerStatSummaries : AbstractDomainObject
 	{
-		public PlayerStatSummaries()
-		{
-		}
-
+        /// <summary>
+        /// Summaries of player's stats based on queue type.
+        /// </summary>
 		public List<PlayerStatSummary> playerStatSummarySet;
-		//May be a real value, using int out of convenience
-		public int userId;
+
+        /// <summary>
+        /// The account ID number that corresponds to the summary stat list.
+        /// </summary>
+		public long userId;
 	}
 }

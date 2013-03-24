@@ -33,7 +33,7 @@ namespace com.riotgames.platform.clientfacade.domain
 		public string clientSystemStates;
 		public SummonerCatalog summonerCatalog;
 		public ArrayCollection languages;
-		public AllSummonerData allSummonerData;
+		public AllPublicSummonerData allSummonerData;
 		public int leaverPenaltyLevel;
 		public string broadcastNotification;
 		public bool matchMakingEnabled;

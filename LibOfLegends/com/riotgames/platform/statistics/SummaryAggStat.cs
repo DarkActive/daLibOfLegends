@@ -2,15 +2,19 @@
 
 namespace com.riotgames.platform.statistics
 {
+    /// <summary>
+    /// Class for individual aggregated stats, specified by type member.
+    /// </summary>
 	public class SummaryAggStat : AbstractDomainObject
 	{
-		public SummaryAggStat()
-		{
-		}
-
+        /// <summary>
+        /// Type or name of aggregated stat.
+        /// </summary>
 		public string statType;
-		//It's really a real value, casting it to integer out of convenience
-		//public double value;
+
+		/// <summary>
+		/// Value of aggregated stat.
+		/// </summary>
 		public int value;
 	}
 }

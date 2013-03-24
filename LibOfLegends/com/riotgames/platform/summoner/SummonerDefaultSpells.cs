@@ -4,6 +4,7 @@ using com.riotgames.platform.gameclient.domain;
 
 namespace com.riotgames.platform.summoner
 {
+    //TODO: fix this class and add summary docs
 	public class SummonerDefaultSpells : AbstractDomainObject
 	{
 		public string summonerDefaultSpellsJson;

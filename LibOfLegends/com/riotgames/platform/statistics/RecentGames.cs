@@ -4,14 +4,20 @@ using com.riotgames.platform.gameclient.domain;
 
 namespace com.riotgames.platform.statistics
 {
+    /// <summary>
+    /// Class with a list of all user's recent games.
+    /// </summary>
 	public class RecentGames : AbstractDomainObject
 	{
-		public string recentGamesJson;
-		public List<PlayerGameStats> gameStatistics;
-		public int userId;
 
-		public RecentGames()
-		{
-		}
+        /// <summary>
+        /// List of up to 10 previous games.
+        /// </summary>
+		public List<PlayerGameStats> gameStatistics;
+
+        /// <summary>
+        /// Account ID number of specified recent games user.
+        /// </summary>
+		public long userId;
 	}
 }

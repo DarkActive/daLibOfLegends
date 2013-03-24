@@ -4,17 +4,50 @@ using com.riotgames.platform.gameclient.domain;
 
 namespace com.riotgames.platform.statistics
 {
+    /// <summary>
+    /// Player/summoner lifetime stats of the season that was requested.
+    /// Includes all queue type stats and regular player stats.
+    /// </summary>
 	public class PlayerLifeTimeStats : AbstractDomainObject
 	{
+        /// <summary>
+        /// A class with a list of each individual queue type and the stat summaries of that queue.
+        /// </summary>
 		public PlayerStatSummaries playerStatSummaries;
+
+        /// <summary>
+        /// A class with information about leaver penalty stats.
+        /// </summary>
 		public LeaverPenaltyStats leaverPenaltyStats;
+
+        /// <summary>
+        /// The date/time of the last time First Win Of the Day was used.
+        /// </summary>
 		public DateTime previousFirstWinOfDay;
-		public int userId;
+
+        /// <summary>
+        /// The account ID number corresponding to this PlayerStats.
+        /// </summary>
+		public long userId;
+
+        /// <summary>
+        /// The streak number of dodges this player is currently at.
+        /// </summary>
 		public int dodgeStreak;
-		//Can be null so it must not have the right type right away, otherwise it will get converted to a bogus date
-		//public DateTime dodgePenaltyDate;
+
+        /// <summary>
+        /// The last dodgePenalty date which is by default set to "object" type because it can be null, but if set is a DateTime object.
+        /// </summary>
 		public object dodgePenaltyDate;
+
+        /// <summary>
+        /// JSON of the playerStats.
+        /// </summary>
 		public string playerStatsJson;
+
+        /// <summary>
+        /// The general player stats.
+        /// </summary>
 		public PlayerStats playerStats;
 
         public PlayerStatSummary getRankedSolo5x5()

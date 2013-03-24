@@ -5,7 +5,7 @@ namespace com.riotgames.platform.gameclient.domain
 {
 	public class AllPublicSummonerDataDTO : AbstractDomainObject
 	{
-		public BasePublicSummonerDTO summoner;
+		//public BasePublicSummonerDTO summoner;
 		public SpellBook spellBook;
 		public SummonerDefaultSpells summonerDefaultSpells;
 		public SummonerTalentsAndPoints summonerTalentsAndPoints;

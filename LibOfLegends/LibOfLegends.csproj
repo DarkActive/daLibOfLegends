@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\LibOfLegends.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -79,6 +80,9 @@
     <Compile Include="com\riotgames\platform\game\PlayerChampionSelectionDTO.cs" />
     <Compile Include="com\riotgames\platform\game\GameDTO.cs" />
     <Compile Include="com\riotgames\platform\game\GameState.cs" />
+    <Compile Include="com\riotgames\platform\leagues\LeagueItem.cs" />
+    <Compile Include="com\riotgames\platform\leagues\LeagueList.cs" />
+    <Compile Include="com\riotgames\platform\leagues\SummonerLeagues.cs" />
     <Compile Include="com\riotgames\platform\matchmaking\GameQueueConfig.cs" />
     <Compile Include="com\riotgames\platform\matchmaking\QueueInfo.cs" />
     <Compile Include="com\riotgames\platform\matchmaking\MatchMakerParams.cs" />
@@ -95,8 +99,8 @@
     <Compile Include="com\riotgames\platform\statistics\SummaryAggStat.cs" />
     <Compile Include="com\riotgames\platform\statistics\SummaryAggStats.cs" />
     <Compile Include="com\riotgames\platform\statistics\TimeTrackedStat.cs" />
-    <Compile Include="com\riotgames\platform\summoner\AllSummonerData.cs" />
-    <Compile Include="com\riotgames\platform\summoner\BasePublicSummonerDTO.cs" />
+    <Compile Include="com\riotgames\platform\summoner\AllPublicSummonerData.cs" />
+    <Compile Include="com\riotgames\platform\summoner\BasePublicSummoner.cs" />
     <Compile Include="com\riotgames\platform\gameclient\domain\broadcast\BroadcastNotification.cs" />
     <Compile Include="com\riotgames\platform\gameclient\domain\FellowPlayerInfo.cs" />
     <Compile Include="com\riotgames\platform\gameclient\domain\game\GameReconnectionInfo.cs" />
@@ -108,7 +112,6 @@
     <Compile Include="com\riotgames\platform\summoner\masterybook\TalentEntry.cs" />
     <Compile Include="com\riotgames\platform\summoner\RuneSlot.cs" />
     <Compile Include="com\riotgames\platform\summoner\SummonerCatalog.cs" />
-    <Compile Include="com\riotgames\platform\summoner\Summoner.cs" />
     <Compile Include="com\riotgames\platform\summoner\SummonerDefaultSpells.cs" />
     <Compile Include="com\riotgames\platform\gameclient\login\Login.cs" />
     <Compile Include="com\riotgames\platform\statistics\PlayerGameStats.cs" />
@@ -126,7 +129,7 @@
     <Compile Include="com\riotgames\platform\summoner\SummonerTalentsAndPoints.cs" />
     <Compile Include="com\riotgames\platform\summoner\Talent.cs" />
     <Compile Include="com\riotgames\platform\summoner\TalentGroup.cs" />
-    <Compile Include="com\riotgames\platform\summoner\TalentRow.cs" />
+    <Compile Include="TalentRow.cs" />
     <Compile Include="com\riotgames\platform\systemstate\ClientSystemStatesJson.cs" />
     <Compile Include="com\riotgames\platform\systemstate\ClientSystemStatesNotification.cs" />
     <Compile Include="com\riotgames\platform\systemstate\GameMapEnabledDTO.cs" />

@@ -4,13 +4,19 @@ using com.riotgames.platform.gameclient.domain;
 
 namespace com.riotgames.platform.statistics
 {
+    /// <summary>
+    /// Class with list of Aggregated Stats of specific queue type or stat type.
+    /// </summary>
 	public class SummaryAggStats : AbstractDomainObject
 	{
-		public SummaryAggStats()
-		{
-		}
-
+        /// <summary>
+        /// List of aggregated stats.
+        /// </summary>
 		public List<SummaryAggStat> stats;
+
+        /// <summary>
+        /// JSON of aggregated stats.
+        /// </summary>
 		public string statsJson;
 
         public int getKills()

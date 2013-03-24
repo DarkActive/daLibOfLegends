@@ -42,7 +42,7 @@ namespace LibOfLegends
             Call(serviceName, "getAllPublicSummonerDataByAccount", responder, arguments);
         }
 
-        private void GetAllSummonerDataByAccountInternal(Responder<AllSummonerData> responder, object[] arguments)
+        private void GetAllSummonerDataByAccountInternal(Responder<AllPublicSummonerData> responder, object[] arguments)
         {
             Call(serviceName, "getAllSummonerDataByAccount", responder, arguments);
         }
@@ -79,9 +79,9 @@ namespace LibOfLegends
 
         // z
         //I don't understand how this one works anymore, always returns null for me
-        public AllSummonerData GetAllSummonerDataByAccount(long accountID)
+        public AllPublicSummonerData GetAllSummonerDataByAccount(long accountID)
         {
-            return (new InternalCallContext<AllSummonerData>(GetAllSummonerDataByAccountInternal, new object[] { accountID })).Execute();
+            return (new InternalCallContext<AllPublicSummonerData>(GetAllSummonerDataByAccountInternal, new object[] { accountID })).Execute();
         }
 
         public List<string> GetSummonerNames(List<long> summonerIDs)
